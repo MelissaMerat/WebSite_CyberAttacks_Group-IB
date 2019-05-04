@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<!-- le xmlns c'est le namespace il ets dit dans le doc de thymeleaf qu'il faut l'utiliser mais on peut en utiliser d'autres-->
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- partout où on veut utiliser thymeleaf il faut utiliser le th si on le nomme toto ce sera toto etc -->
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+</head>
+
+<body>
+<!-- PS on peut ajouter du texte entre les balises h1 de ce que j'ai compris ce serait pour aider les designer en mettant ce qu'il y aurait cf video -->
+<h1 th:text="'Hi '+${name}+' !'"></h1>
+
+</body>
+</html>
