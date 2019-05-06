@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>company Details</title>
+</head>
+
+<body>
+    <h3 th:text="'company ID '+${id}"></h3>
+    <table border="1">
+        <tr>
+            <td th:text="'Name'"></td><td th:text="${name}"></td>
+        </tr>
+        <tr>
+            <td th:text="'Location'"></td><td th:text="${location}"></td>
+        </tr>
+        <tr>
+            <td th:text="'Industry'"></td><td th:text="${industry}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
