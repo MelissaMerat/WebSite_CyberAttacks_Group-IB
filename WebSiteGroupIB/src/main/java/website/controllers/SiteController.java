@@ -16,14 +16,19 @@ public class SiteController {
     ajouter
     @ResponseBody
     */
+
     @GetMapping("/")
-    public String home(@RequestParam(required = false, defaultValue = "World") String name, ModelMap modelMap) {
-        modelMap.put("name", name);
-        return "pages/home";
+    public String home() {
+        return "pages/frontEnd";
+    }
+
+    @GetMapping("/backend/")
+    public String homeBack() {
+        return "pages/backEnd";
     }
 
     @GetMapping("/companyDetails/")
-    public String companyDetails(@RequestParam(required = false, defaultValue = "1") String id, ModelMap modelMap) {
+    public String companyDetails(@RequestParam(required = false, defaultValue = "1") int id, ModelMap modelMap) {
         try {
 
             Connection conn = openConnection();
@@ -42,12 +47,11 @@ public class SiteController {
                 location = rset.getString("location");
                 industry = rset.getString("industry");
             }
-
             Map<String, String> map = new HashMap<String, String>();
             map.put("name", name);
             map.put("location", location);
             map.put("industry", industry);
-            map.put("id", id);
+            map.put("id", Integer.toString(id));
             modelMap.putAll(map);
 
             conn.close();
@@ -55,8 +59,24 @@ public class SiteController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "pages/companyDetails";
+        return "pages/companyDetails/";
     }
+
+    @GetMapping("/backend/companyAdd/")
+    public String companyAdd() {
+        return "pages/companyAdd";
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public Connection openConnection() {
 

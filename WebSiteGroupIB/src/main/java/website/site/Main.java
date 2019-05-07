@@ -42,13 +42,13 @@ public class Main {
 
 			// Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
 			String strSelect = "select name, id, location, industry  from company";
-			System.out.println("The SQL statement is: " + strSelect + "\n"); // Echo For debugging
+			//System.out.println("The SQL statement is: " + strSelect + "\n"); // Echo For debugging
 
 			ResultSet rset = stmt.executeQuery(strSelect);
 
 			// Step 4: Process the ResultSet by scrolling the cursor forward via next().
 			//  For each row, retrieve the contents of the cells with getXxx(columnName).
-			System.out.println("The records selected are:");
+			/*System.out.println("The records selected are:");
 			int rowCount = 0;
 			while(rset.next()) {   // Move the cursor to the next row, return false if no more row
 				String name = rset.getString("name");
@@ -59,7 +59,7 @@ public class Main {
 				++rowCount;
 			}
 			System.out.println("Total number of records = " + rowCount);
-
+			*/
 
 			System.out.print("Database is connected !");
 			conn.close();
